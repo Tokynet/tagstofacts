@@ -6,7 +6,7 @@ Some scripts to aide in the creation of facts from AWS Tags
 I put the scripts in:
 /etc/puppet/modules/**$MODULENAME**/lib/facter/
 
-instanceid.rb and regions.rb make simple get calls to get information from *meta-data*.
+instanceid.rb and regions.rb make simple curl calls to get information from *meta-data*.
 
 tagstofacts.rb makes a *ec2 API* call and plainly (read ugly) greps and awks the values we care for. Its an ugly setup, since each puppet run will make 5 ec2 calls, multiply that x the number of instances you have and you might get blocked from making API calls.
 
